@@ -14,12 +14,13 @@ namespace WebApplication.API
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)//adds needed services
         {
             services.AddControllers();
             services.AddSwaggerDocument();
            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         }
+        //this method configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -1,27 +1,27 @@
 {
-  "id": "1e43ad40-28d4-4f4d-8b26-530d3d5d33bb",
+  "id": "07c56d50-2799-4e99-a40f-237be451bfaa",
   "version": "2.0",
-  "name": "Test",
+  "name": "testEbebek",
   "url": "https://www.e-bebek.com",
   "tests": [{
-    "id": "20c4dd44-5de5-472e-9106-fed9bd542d35",
-    "name": "testing",
+    "id": "cb33d368-d302-4bd3-bd84-1e381e888b38",
+    "name": "ebebekTest",
     "commands": [{
-      "id": "d7eb2ff5-04e9-47e0-add5-947ed907557f",
+      "id": "113dad99-e846-4684-80b6-14d54eefcd8e",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "3d9ac2b9-b740-4aad-9737-15cbc6e096bf",
+      "id": "072eae8b-f263-4d36-8c52-207a5c2f5c1a",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1382x744",
+      "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "2118b5bd-77de-47a1-af1f-eac1762b17fe",
+      "id": "19223b79-b915-401c-a7bc-be53b15ca1fd",
       "comment": "",
       "command": "click",
       "target": "id=txtSearchBox",
@@ -33,7 +33,7 @@
       ],
       "value": ""
     }, {
-      "id": "5c223baa-0dfd-4ded-8dbc-f4262417da31",
+      "id": "249e204d-e0e0-43d9-b6e1-dafcfcae351b",
       "comment": "",
       "command": "type",
       "target": "id=txtSearchBox",
@@ -45,7 +45,7 @@
       ],
       "value": "biberon"
     }, {
-      "id": "aec733e9-edc7-4927-8e7d-7535e35bd2f7",
+      "id": "e4871581-cb35-4fba-bb77-17661f21583a",
       "comment": "",
       "command": "sendKeys",
       "target": "id=txtSearchBox",
@@ -57,43 +57,62 @@
       ],
       "value": "${KEY_ENTER}"
     }, {
-      "id": "028ffee2-25ab-4810-8783-4febfbf7f457",
+      "id": "9d6bedd4-4fb0-4eb1-90f8-bb6051f8534a",
       "comment": "",
-      "command": "runScript",
-      "target": "window.scrollTo(0,12)",
-      "targets": [],
-      "value": ""
+      "command": "waitForElementVisible",
+      "target": "css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted",
+      "targets": [
+        ["css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted", "css:finder"],
+        ["xpath=//img[@alt='baby plus Biberon Temizleme Fırçası']", "xpath:img"],
+        ["xpath=//figure/cx-media/img", "xpath:position"]
+      ],
+      "value": "8000"
     }, {
-      "id": "a24c6ae5-888e-465e-b8db-1ca7594640c5",
+      "id": "95de34b7-f4cd-4d93-ab97-ec9efc39b986",
       "comment": "",
       "command": "click",
       "target": "css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted",
       "targets": [
         ["css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted", "css:finder"],
-        ["xpath=//img[@alt='Lansinoh Hoşgeldin Bebek Biberon Seti']", "xpath:img"],
+        ["xpath=//img[@alt='baby plus Biberon Temizleme Fırçası']", "xpath:img"],
         ["xpath=//figure/cx-media/img", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "0a22ba02-939a-495e-8353-130c7ad300b4",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted",
-      "targets": [
-        ["css=.col-6:nth-child(1) .is-initialized > .ng-star-inserted", "css:finder"],
-        ["xpath=//img[@alt='Lansinoh Hoşgeldin Bebek Biberon Seti']", "xpath:img"],
-        ["xpath=//figure/cx-media/img", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "d77fa3f1-703c-43f6-aa80-7474cae5aaee",
+      "id": "5f1171bd-2a07-4808-940d-e9a7c5620f0a",
       "comment": "",
       "command": "runScript",
-      "target": "window.scrollTo(0,50)",
+      "target": "window.scrollTo(0,0)",
       "targets": [],
       "value": ""
     }, {
-      "id": "4565800a-9e94-4d79-96fc-056fc52082cf",
+      "id": "e43a7977-a776-4a63-8fb5-ec420067ff4c",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "id=addToCartBtn",
+      "targets": [
+        ["id=addToCartBtn", "id"],
+        ["css=#addToCartBtn", "css:finder"],
+        ["xpath=//button[@id='addToCartBtn']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sepete Ekle')]", "xpath:innerText"]
+      ],
+      "value": "8000"
+    }, {
+      "id": "a7c83b51-07cf-4a0f-b03a-eb9352f2fd76",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=addToCartBtn",
+      "targets": [
+        ["id=addToCartBtn", "id"],
+        ["css=#addToCartBtn", "css:finder"],
+        ["xpath=//button[@id='addToCartBtn']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sepete Ekle')]", "xpath:innerText"]
+      ],
+      "value": "Sepete Ekle"
+    }, {
+      "id": "d7d7f55a-7c11-4104-bfca-b5331dfa66a4",
       "comment": "",
       "command": "click",
       "target": "id=addToCartBtn",
@@ -106,7 +125,29 @@
       ],
       "value": ""
     }, {
-      "id": "acda3feb-77ad-49ad-b83f-ac81dd34a18e",
+      "id": "20a79d92-42d3-4e5b-b5be-07b97203a589",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.info-text",
+      "targets": [
+        ["css=.info-text", "css:finder"],
+        ["xpath=//div[2]/div/div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Ürün Sepetinizde')]", "xpath:innerText"]
+      ],
+      "value": "8000"
+    }, {
+      "id": "6293e48e-00dd-4fd2-82cd-2736643bf9e8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.info-text",
+      "targets": [
+        ["css=.info-text", "css:finder"],
+        ["xpath=//div[2]/div/div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Ürün Sepetinizde')]", "xpath:innerText"]
+      ],
+      "value": "Ürün Sepetinizde"
+    }, {
+      "id": "0abd54c9-3e50-4722-8484-77d18d9377c0",
       "comment": "",
       "command": "click",
       "target": "id=btnShowCart",
@@ -122,21 +163,25 @@
       ],
       "value": ""
     }, {
-      "id": "abb75ccf-037b-4cfb-9519-f564c3493d11",
+      "id": "e701d808-ab24-41e0-9625-c1d4fbcd3d1c",
       "comment": "",
-      "command": "runScript",
-      "target": "window.scrollTo(0,202)",
-      "targets": [],
-      "value": ""
+      "command": "waitForElementVisible",
+      "target": "css=.cx-item-list-row:nth-child(2) h2",
+      "targets": [
+        ["css=.cx-item-list-row:nth-child(2) h2", "css:finder"],
+        ["xpath=//div[2]/div/eb-cart-item/div/div/div/a/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Biberon ve Biberon Emziği Temizleme Fırçası')]", "xpath:innerText"]
+      ],
+      "value": "8000"
     }]
   }],
   "suites": [{
-    "id": "83ecc47c-17f2-4c9f-bf8d-d81d8b8cb321",
+    "id": "41de6562-b007-495d-86e7-4b2c9f6d63b8",
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["20c4dd44-5de5-472e-9106-fed9bd542d35"]
+    "tests": ["cb33d368-d302-4bd3-bd84-1e381e888b38"]
   }],
   "urls": ["https://www.e-bebek.com/"],
   "plugins": []

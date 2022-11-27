@@ -21,7 +21,7 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class TestEbebekTest {
+public class EbebekTestTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -36,22 +36,33 @@ public class TestEbebekTest {
     driver.quit();
   }
   @Test
-  public void testing() {
+  public void ebebekTest() {
     driver.get("https://www.e-bebek.com/");
-    driver.manage().window().setSize(new Dimension(1382, 744));
+    driver.manage().window().setSize(new Dimension(1552, 840));
     driver.findElement(By.id("txtSearchBox")).click();
     driver.findElement(By.id("txtSearchBox")).sendKeys("biberon");
     driver.findElement(By.id("txtSearchBox")).sendKeys(Keys.ENTER);
-    js.executeScript("window.scrollTo(0,12)");
-    driver.findElement(By.cssSelector(".col-6:nth-child(1) .is-initialized > .ng-star-inserted")).click();
     {
-      WebElement element = driver.findElement(By.cssSelector(".col-6:nth-child(1) .is-initialized > .ng-star-inserted"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
+      WebDriverWait wait = new WebDriverWait(driver, 8);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".col-6:nth-child(1) .is-initialized > .ng-star-inserted")));
     }
-    js.executeScript("window.scrollTo(0,50)");
+    driver.findElement(By.cssSelector(".col-6:nth-child(1) .is-initialized > .ng-star-inserted")).click();
+    js.executeScript("window.scrollTo(0,0)");
+    {
+      WebDriverWait wait = new WebDriverWait(driver, 8);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("addToCartBtn")));
+    }
+    assertThat(driver.findElement(By.id("addToCartBtn")).getText(), is("Sepete Ekle"));
     driver.findElement(By.id("addToCartBtn")).click();
+    {
+      WebDriverWait wait = new WebDriverWait(driver, 8);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".info-text")));
+    }
+    assertThat(driver.findElement(By.cssSelector(".info-text")).getText(), is("Ürün Sepetinizde"));
     driver.findElement(By.id("btnShowCart")).click();
-    js.executeScript("window.scrollTo(0,202)");
+    {
+      WebDriverWait wait = new WebDriverWait(driver, 8);
+      wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cx-item-list-row:nth-child(2) h2")));
+    }
   }
 }
